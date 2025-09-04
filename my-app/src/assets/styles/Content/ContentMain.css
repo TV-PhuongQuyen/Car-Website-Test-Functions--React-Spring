@@ -1,0 +1,4 @@
+.content-container {
+    perspective: 1000px;
+    overflow   : hidden;
+}

@@ -1,0 +1,162 @@
+.Login {
+    position: relative;
+    overflow: hidden;
+    height  : 100vh;
+}
+
+a {
+
+    color: turquoise;
+}
+
+.Login_logo img {
+    position: absolute;
+
+    width : 100px;
+    height: 100px;
+}
+
+
+
+.Login_form_container {
+
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    background-color: rgb(61, 61, 61, 0.2);
+    color           : white;
+    font-family     : 'Times New Roman', Times, serif;
+}
+
+.title_text_logo {
+    font-size    : 30px;
+    margin-bottom: 20px;
+    font-family  : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Login_form {
+    background-image   : url('https://get.wallhere.com/photo/night-car-vehicle-supercars-sports-car-McLaren-675LT-light-darkness-supercar-screenshot-computer-wallpaper-land-vehicle-automotive-design-automobile-make-2048x1164-px-597344.jpg');
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center;
+    width              : 500px;
+    padding            : 10px;
+    display            : flex;
+    justify-content    : center;
+    align-items        : center;
+}
+
+.Login_form_content {
+    width           : 100%;
+    padding         : 10px 0;
+    background-color: rgba(142, 142, 143, 0.3);
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    justify-content : center;
+
+}
+
+.Login_form h1 {
+    font-size: 30px;
+
+}
+
+.Login_form label {
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    font-size     : 20px;
+}
+
+.Login_form input {
+    width        : 350px;
+    height       : 45px;
+    padding      : 0 10px;
+    font-size    : 18px;
+    border       : 1px solid #ccc;
+    border-radius: 5px;
+    outline      : none;
+    margin       : 10px 0;
+}
+
+.Login_form_content button {
+    width           : 100%;
+    height          : 45px;
+    font-size       : 18px;
+    margin          : 10px 0;
+    border          : none;
+    background-color: #2d6e7e;
+    color           : white;
+    cursor          : pointer;
+}
+
+.Login_form_social {
+    display        : flex;
+    justify-content: space-between;
+
+}
+
+.Login_form_social button {
+    width           : 100px;
+    height          : 45px;
+    font-size       : 18px;
+    margin          : 10px 0;
+    border          : none;
+    background-color: #2d6e7e;
+    color           : white;
+    cursor          : pointer;
+}
+
+
+#google {
+    background-color: white;
+}
+
+.Login_form_content button img {
+    width : 30px;
+    height: 30px;
+}
+
+.Login_form_forgot_container {
+    width          : 100%;
+    display        : flex;
+    justify-content: end;
+    align-items    : center;
+    margin-bottom  : 10px;
+}
+
+.Login_form_forgot_container a {
+    color          : white;
+    text-decoration: none;
+    font-size      : 18px;
+}
+
+.Login_form_forgot_container a:hover {
+    color: turquoise;
+}
+
+.Login_form_footer {
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    margin-top     : 20px;
+}
+
+.Login_form_footer span {
+    color : rgb(5, 238, 255);
+    cursor: pointer;
+}
+
+.Login_form_footer_text div {
+    color          : white;
+    text-decoration: none;
+    font-size      : 19px;
+    cursor         : pointer;
+}

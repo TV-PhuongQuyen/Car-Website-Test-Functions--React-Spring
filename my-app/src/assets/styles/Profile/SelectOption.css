@@ -1,0 +1,26 @@
+.Profile_content_top {
+    display: flex;
+}
+
+.Profile_content_top_flex {
+    display        : flex;
+    width          : 300px;
+    align-items    : center;
+    justify-content: center;
+}
+
+.Profile_content_top_flex:hover {
+    border-radius: 5px;
+    border-bottom: 3px solid #565757;
+
+}
+
+.Profile_content_top_flex i {
+    margin: 0 5px;
+}
+
+.active {
+    border-radius: 5px;
+    color        : #0a97cf;
+    border-bottom: 3px solid #0a97cf;
+}
