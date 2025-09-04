@@ -174,3 +174,9 @@ id, users_id, context, media_url, privacy, created_at, modified_date
 Lưu thông tin chi tiết của user: ảnh đại diện, mô tả, thông tin cá nhân.
 
 Docker Hub link: https://hub.docker.com/repositories/tvpquyen
+
+**Lưu ý:**
+Trong application.yaml trong oto bankend và file configurations.js bên fontend tự động thêm dữ liệu google could để login google:
+  clientID: "",
+  redirect: "",
+  authUri: ""
