@@ -1,0 +1,32 @@
+.content-first {
+    background-image     : url("/src/assets/images/Banner\ content-firt.jpg");
+    background-size      : cover;
+    background-position-y: -400px;
+    background-repeat    : no-repeat;
+    height               : 300px;
+    width                : 100%;
+}
+
+.content-first-container {
+    margin-left: 60px;
+}
+
+.content-first h1 {
+    color      : white;
+    font-size  : 2.8rem;
+    padding-top: 100px;
+}
+
+.content-first button {
+    background-color: #f0f0f0;
+    border          : none;
+    color           : black;
+    cursor          : pointer;
+    font-size       : 1.2rem;
+    padding         : 20px 40px;
+}
+
+.content-first button:hover {
+    background-color: #d0d0d0;
+    transition      : 0.3s ease-in-out;
+}

@@ -1,0 +1,122 @@
+.flex_center {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.Profile {
+    background-image   : url('../images/New\ car.jpg');
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center;
+    padding            : 40px;
+    display            : flex;
+    justify-content    : center;
+    align-items        : center;
+    margin-top         : 60px;
+}
+
+.Profile_container {
+
+    background-color: rgba(94, 94, 94, 0.4);
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+}
+
+.Profile_content {
+    background-color: white;
+
+}
+
+button {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    padding         : 6px 20px;
+    border          : 1px solid #a8a8a8;
+    font-size       : 14px;
+    background-color: rgb(248, 249, 250);
+    align-items     : center;
+    border-radius   : 5px;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+
+
+.Profile_content_bottom_title {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 10px 20px;
+    font-size      : 17px;
+}
+
+
+
+.Profile_content_bottom_flex button:hover {
+    background-color: #eeeff0;
+    transition      : all 0.3s ease-in-out;
+}
+
+
+
+.Profile_content_bottom_info {
+    width  : 900px;
+    padding: 10px;
+}
+
+.Profile_content_bottom_info_content {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+}
+
+.Profile_content_bottom_info_content input,
+label {
+    font-size: 16px;
+    margin   : 10px;
+}
+
+.Profile_content_bottom_info_content input {
+    width        : 400px;
+    padding      : 10px;
+    outline      : none;
+    border-radius: 5px;
+    border       : 1px solid #a8a8a8;
+
+}
+
+
+.Profile_content_bottom_info_action {
+    padding        : 10px;
+    display        : flex;
+    justify-content: flex-end;
+}
+
+.Profile_content_bottom_info_action button {
+    margin: 0 10px;
+}
+
+
+
+.Profile_content_bottom_info_action #save {
+    background-color: #0d81af;
+    color           : white;
+}
+
+.Profile_content_bottom_info_action #cancel {
+    background-color: #d41616;
+    color           : rgb(255, 255, 255);
+
+}
+
+#cancel:hover,
+#save:hover {
+    background-color: #ebe9e9;
+    color           : #181818;
+    transition      : all 0.3s ease-in-out;
+}

@@ -1,0 +1,151 @@
+.dashboardAdmin {
+    margin-top      : 60px;
+    background-color: rgb(231, 112, 32);
+}
+
+
+.menu_list {
+    margin: 0;
+}
+
+.menu_list li {
+    margin-top: 10px;
+    list-style: none;
+    padding   : 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.dashboardAdmin_container {
+    background-color: rgb(255, 255, 255);
+    border-radius   : 10px;
+    display         : flex;
+
+}
+
+.navbar_dashboardAdmin {
+    width           : 25%;
+    background-color: rgb(23, 25, 32);
+    font-family     : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color           : white;
+    transition      : width 0.4s ease;
+}
+
+.navbar_dashboardAdmin.show {
+    width: 25%;
+}
+
+/* Khi ẩn */
+.navbar_dashboardAdmin.hide {
+    width: 0;
+}
+
+.navbar_dashboardAdmin_logo {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+}
+
+.navbar_dashboardAdmin_logo>div {
+    font-size  : 16px;
+    font-weight: 700;
+}
+
+
+.navbar_dashboardAdmin_logo img {
+    width        : 60px;
+    height       : 60px;
+    border-radius: 50%;
+    object-fit   : contain;
+}
+
+
+.menu_section {
+    font-size    : 16px;
+    padding      : 20px;
+    cursor       : pointer;
+    border-bottom: 1px solid rgb(99, 98, 98);
+    transition   : all 0.2s ease-in-out;
+
+}
+
+.menu_section:hover {
+    border-bottom: 1px solid rgb(255, 255, 255);
+
+}
+
+
+.menu_section i span {
+    margin-left: 10px;
+}
+
+.menu_title {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+}
+
+.menu_manage,
+.menu_from {
+    overflow      : hidden;
+    max-height    : 0;
+    opacity       : 0;
+    transform     : translateY(-10px);
+    pointer-events: none;
+    transition    : all 0.3s ease;
+}
+
+.menu_manage.show,
+.menu_from.show {
+    max-height    : 500px;
+    opacity       : 1;
+    transform     : translateY(0);
+    pointer-events: auto;
+}
+
+.dashboardAdmin_viewContainer {
+    width: 100%;
+}
+
+.dashboardAdmin_header {
+    display         : flex;
+    align-items     : center;
+    width           : 100%;
+    padding         : 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow      : 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.dashboardAdmin_header input {
+    width    : 500px;
+    height   : 25px;
+    border   : 1px solid rgb(200, 200, 200);
+    padding  : 5px 10px;
+    font-size: 15px;
+    outline  : none;
+}
+
+.togle-menu {
+    margin-right: 20px;
+}
+
+
+
+.toggle-menu i {
+    font-size: 25px;
+
+}
+
+.toggle-menu:hover {
+    color     : rgb(226, 92, 15);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+.dashboardAdmin_view {
+    padding: 20px;
+}

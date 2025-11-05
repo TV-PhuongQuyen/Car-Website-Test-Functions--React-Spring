@@ -1,0 +1,48 @@
+.content-six-image {
+    padding: 0 60px;
+}
+
+.content-six-image img {
+    height    : 400px;
+    width     : 100%;
+    object-fit: cover;
+}
+
+.content-six-image img:hover {
+    transform : scale(1.01);
+    transition: 0.3s ease-in-out;
+}
+
+.content-six-text {
+    padding: 0 60px;
+}
+
+.content-six-text-buttons {
+    display    : flex;
+    align-items: center;
+    gap        : 20px;
+    padding    : 20px 0;
+}
+
+.content-six-text-buttons button {
+    background-color: #a3a3a3;
+    border          : none;
+    font-weight     : bold;
+    padding         : 7px 12px;
+    color           : white;
+    font-size       : 10px;
+    cursor          : pointer;
+}
+
+.content-six-text-buttons button:hover {
+    border: 1px solid #000;
+}
+
+.content-six-text-info {
+    text-align: justify;
+}
+
+.content-six-text-info span {
+    font-weight: bold;
+    font-size  : 14px;
+}

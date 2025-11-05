@@ -1,0 +1,227 @@
+.Profile_content_header_info {
+    background-image : url('../../images//Banner\ content-firt.jpg');
+    background-size  : cover;
+    background-repeat: no-repeat;
+    display          : flex;
+    flex-direction   : column;
+    align-items      : center;
+    justify-content  : center;
+}
+
+.Profile_content_header_focusImg,
+.ChangeAvatar {
+    position        : fixed;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    color           : #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    top             : 0;
+    left            : 0;
+    z-index         : 99999;
+}
+
+.ChangeAvatar {
+    z-index: 88888;
+}
+
+.ChangeAvatar_container_header {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.ChangeAvatar_container {
+    background-color: rgb(255, 255, 255);
+    color           : #000000;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-between;
+    width           : 310px;
+    height          : 340px;
+    border-radius   : 5px;
+    padding         : 20px;
+    font-family     : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.ChangeAvatar_container_header #iconcamera {
+    margin-right: 10px;
+}
+
+.icon_close:hover {
+    cursor    : pointer;
+    transform : scale(1.1);
+    color     : rgb(204, 78, 78);
+    transition: all 0.3s ease-in-out;
+}
+
+.ChangeAvatar_container span {
+    font-size: 12px;
+    color    : #929292;
+}
+
+.ChangeAvatar_container_body_btn {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.ChangeAvatar_container_body_btn button {
+    width : 14 0px;
+    width : 150px;
+    border: none;
+}
+
+.ChangeAvatar_container_body_btn button:hover {
+    cursor          : pointer;
+    transform       : scale(1.05);
+    transition      : all 0.3s ease-in-out;
+    box-shadow      : 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #1877f2;
+    color           : white;
+}
+
+.ChangeAvatar_container_body_btn #btn_cancel {
+    background-color: #ffffffdc;
+    color           : black;
+    border          : 1px solid #bebebe;
+}
+
+.ChangeAvatar_container_body_btn #btn_save {
+    background-color: #1877f2;
+    color           : white;
+}
+
+.ChangeAvatar_container_body_upload {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.ChangeAvatar_container_body_upload i {
+    cursor: pointer;
+}
+
+.ChangeAvatar_container_body_upload .selectFile {
+    margin-right: 7px;
+}
+
+.ChangeAvatar_container_body_upload_btn {
+    display      : flex;
+    padding      : 5px;
+    cursor       : pointer;
+    width        : 270px;
+    align-items  : center;
+    border       : 1px solid #929292;
+    border-radius: 5px;
+}
+
+.ChangeAvatar_container_body_upload_btn input {
+    outline: none;
+    border : none;
+    color  : black;
+}
+
+.flex_center {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.Profile_content_header_focusImg_container {
+    position       : relative;
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.Profile_content_header_focusImg_container i {
+    position        : absolute;
+    top             : 10px;
+    right           : 10px;
+    cursor          : pointer;
+    font-size       : 24px;
+    color           : #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius   : 50%;
+    padding         : 5px;
+}
+
+.Profile_content_header_focusImg_content {
+    width : 500px;
+    height: 500px;
+}
+
+.Profile_content_header_focusImg_container img {
+    width        : 100%;
+    height       : 100%;
+    object-fit   : contain;
+    border-radius: 10px;
+}
+
+.Profile_content_header_info_avatar {
+    position       : relative;
+    border-radius  : 50%;
+    width          : 100px;
+    height         : 100px;
+    display        : flex;
+    padding        : 10px;
+    align-items    : center;
+    justify-content: center;
+}
+
+.Profile_content_header_info_avatar img,
+.ChangeAvatar_container_body img {
+    width        : 100px;
+    height       : 100px;
+    object-fit   : cover;
+    cursor       : pointer;
+    border       : 4px solid #ffffff;
+    border-radius: 50%;
+}
+
+.Profile_content_header_info_avatar i {
+    position        : absolute;
+    right           : 15px;
+    cursor          : pointer;
+    font-size       : 18px;
+    bottom          : 0;
+    background-color: white;
+    border          : 3px solid #ffffff;
+    border-radius   : 50%;
+}
+
+.Profile_content_header_info_name h2 {
+    color: white;
+}
+
+
+.Profile_content_header_time {
+    display        : flex;
+    align-items    : center;
+    padding        : 4px 0;
+    border-bottom  : 2px solid rgb(182, 182, 182);
+    justify-content: space-between;
+}
+
+.Profile_content_header_time p {
+    font-weight: 500;
+    font-size  : 18px;
+}
+
+.Profile_content_header_time span {
+    font-size: 14px;
+    color    : #565757;
+}
+
+.time_together {
+    width          : 50%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+}

@@ -1,182 +1,191 @@
-Website bán ô tô – Test chức năng (React + Spring Microservices)
-Website bán ô tô là một ứng dụng mô phỏng sàn giao dịch trực tuyến, nơi người dùng có thể đăng bán, tìm kiếm, trò chuyện và quản lý thông tin cá nhân. Dự án được xây dựng chủ yếu để test các chức năng của React (frontend) và Spring Boot Microservices (backend), đồng thời tích hợp với Docker Hub để quản lý container hóa và triển khai dễ dàng. (hiện đang trong quá trình hoàn thiện)
+# 🚗 Website Bán Ô Tô – React + Spring Boot Microservices
 
-Các chức năng hiện có:
-•	Đăng ký, đăng nhập (bao gồm Google Login).
-•	Quản lý hồ sơ cá nhân (Profile).
-•	ăng bài viết bán xe kèm hình ảnh.
-•	Trò chuyện trực tiếp với người bán qua chat.
-Công nghệ sử dụng:
-•	Frontend: ReactJS (cấu trúc chuẩn: assets, components, configurations, hooks, layout, pages, routes, services, store).
-•	Backend – Spring Microservices:
-Spring Boot – Framework chính để xây dựng service.
-Spring Web (Spring MVC / Spring WebFlux) – Xử lý API RESTful.
-Spring Security – Bảo mật API, xác thực & phân quyền.
-Spring Cloud Gateway – Đóng vai trò API Gateway (định tuyến request đến service tương ứng).
-Spring Cloud Config – Quản lý cấu hình tập trung (nếu cần).
-Spring Data JPA – Truy xuất dữ liệu với MySQL.
-Spring Validation – Kiểm tra dữ liệu đầu vào.
-OAuth2 / JWT – Xác thực người dùng (bao gồm login Google).
-OpenFeign (Spring Cloud OpenFeign) – Gọi service-to-service.
-Eureka (Spring Cloud Netflix Eureka) – Service discovery (nếu bạn triển khai auto-discovery).
-Lombok – Giảm boilerplate code (getter/setter, constructor).
-•	Database: MySQL (mỗi service quản lý database riêng biệt).
-•	Triển khai: Docker & Docker Hub (tvpquyen repository).
-1. Frontend (ReactJS)
-Ứng dụng React được tổ chức theo cấu trúc chuẩn để dễ mở rộng và bảo trì:
-assets/ → chứa tài nguyên tĩnh
-•	images: lưu ảnh tĩnh
-•	sounds: lưu file âm thanh
-•	styles: lưu CSS, SCSS hoặc Tailwind config
-components/ → chứa các component con tái sử dụng
-•	C-Content: hiển thị nội dung động
-•	C-Form: form nhập liệu, đăng nhập, đăng ký
-•	C-Header: thanh header, menu
-•	C-Profile: hiển thị thông tin người dùng
-configurations/ → chứa cấu hình chung
-•	configurations.js: config biến môi trường, API URL
-•	httpClients.js: cấu hình axios để gọi API
-•	menuConfigurations.js: cấu hình menu (sidebar, navbar)
-hooks/ → custom React hooks (ví dụ useAuth, useFetch)
-layout/ → layout tổng thể của website
-•	Content-index.jsx: bố cục phần nội dung
-•	Footer-index.jsx: footer chung
-•	Header-index.jsx: header chung
-•	Profile.jsx: layout trang cá nhân
-pages/ → các trang chính
-•	dashboardAdmin.jsx: trang quản trị
-•	index.jsx: trang chủ
-•	Login.jsx: đăng nhập
-•	Register.jsx: đăng ký
-•	Authenticate.jsx: xác thực (Google login, JWT check)
-•	Post.jsx: đăng bài viết bán xe
-routes/ → cấu hình route (React Router v6)
-•	services/ → gọi API backend
-•	authenService.js: login, register, Google login, refresh token
-•	chatService.js: quản lý hội thoại, nhắn tin
-•	hashRole.js: phân quyền theo role
-•	localStorageService.js: thao tác với localStorage
-•	postService.js: tạo, chỉnh sửa, xoá bài đăng xe
-•	profileService.js: xem và cập nhật thông tin cá nhân
-store/ → quản lý state (Redux Toolkit)
-•	authen: state đăng nhập
-•	chat: state hội thoại, tin nhắn
-•	post: state danh sách bài viết
-•	profile: state thông tin cá nhân
-2. Backend (Spring Boot Microservices)
-Hệ thống backend dùng kiến trúc microservice, mỗi service có chức năng độc lập:
-API Gateway
-•	Đóng vai trò cổng vào duy nhất.
-•	Định tuyến request đến các service.
-•	Hỗ trợ filter (authentication, logging, rate limit).
-Auth Service (Oto Service / Identity)
-•	Xác thực và quản lý người dùng.
-•	Hỗ trợ đăng nhập bằng tài khoản và đăng nhập Google.
-•	Cấp JWT token và refresh token.
-•	Quản lý role (Admin, User, Seller, Buyer).
-Chat Service
-•	Quản lý hội thoại giữa buyer và seller.
-•	Gửi/nhận tin nhắn real-time (WebSocket hoặc REST).
-•	Quản lý participant (ai thuộc hội thoại nào).
-File Service
-•	Upload ảnh/video xe.
-•	Lưu metadata file: id, path, chủ sở hữu.
-•	Hỗ trợ download hoặc preview ảnh.
-Post Service
-•	Quản lý bài viết bán xe.
-•	Tạo, chỉnh sửa, xóa bài đăng.
-•	Liên kết với File Service để hiển thị ảnh.
-•	Cho phép filter, tìm kiếm bài viết.
-Profile Service
-•	Quản lý thông tin người dùng (ảnh đại diện, mô tả, số điện thoại).
-•	Cho phép cập nhật profile cá nhân.
-•	Lấy thông tin hồ sơ khi người khác xem.
+**Website bán ô tô** là một ứng dụng mô phỏng sàn giao dịch trực tuyến cho phép người dùng đăng bán, tìm kiếm, trò chuyện và quản lý thông tin cá nhân.
+Dự án được xây dựng với mục tiêu **kiểm thử kiến trúc Microservices** giữa **ReactJS (Frontend)** và **Spring Boot (Backend)**, đồng thời tích hợp **Redis**, **Elasticsearch**, **Docker**, và **Google OAuth2 Login**.
 
-3. Database (MySQL)
-Mỗi service có database riêng (theo kiến trúc microservice).
- 3.1. Auth Service (Identity Service)
+---
 
-users
-Lưu thông tin người dùng cơ bản.
+## 🧩 Tính năng nổi bật
 
-id, username, password, email, google_id
+* ✅ Đăng ký, đăng nhập (bao gồm Google Login – OAuth2)
+* ✅ CRUD sản phẩm (ô tô): đăng, chỉnh sửa, xóa, xem chi tiết
+* ✅ Đăng bài viết chia sẻ xe / kinh nghiệm
+* ✅ Chat real-time giữa người bán và người mua (WebSocket)
+* ✅ Tìm kiếm sản phẩm bằng **Elasticsearch**
 
-user_roles
-Liên kết user với nhiều role.
+  * Gợi ý từ khóa theo thời gian thực
+  * Hiển thị sản phẩm đã từng tìm kiếm
+  * Thống kê giờ/tháng/năm tìm kiếm nhiều nhất
+  * Top người dùng có lượt tìm kiếm cao nhất
+* ✅ Tìm kiếm sản phẩm bằng **hình ảnh** (AI – Python service)
+* ✅ Thống kê, phân tích hành vi người dùng
+* ✅ Caching bằng **Redis**
+* ✅ Triển khai dễ dàng bằng **Docker Compose**
 
-user_id, role_id
+---
 
-roles
-Danh sách các role trong hệ thống (Admin, Seller, Buyer, User).
+## ⚙️ Kiến trúc hệ thống
 
-id, name
+### 🧱 Frontend – ReactJS
 
-permissions
-Danh sách quyền cụ thể.
+Cấu trúc thư mục:
 
-id, description
+```
+src/
+├── assets/              # Ảnh, âm thanh, styles
+├── components/          # Component tái sử dụng (C-Form, C-Header, C-Profile, ...)
+├── configurations/      # Config chung (API, OAuth, Axios)
+│   ├── configurations.js
+│   ├── httpClients.js
+│   ├── menuConfigurations.js
+├── hooks/               # Custom hooks (useAuth, useFetch, ...)
+├── layout/              # Layout tổng thể (Header, Footer, Content)
+├── pages/               # Trang chính (Login, Register, Dashboard, Post, Product, ...)
+├── routes/              # React Router v6
+├── services/            # Gọi API backend
+├── store/               # Redux Toolkit (auth, chat, post, profile, product)
+```
 
-roles_permissions
-Gán quyền cho từng role.
+### OAuth2 Config – `configurations.js`
 
-role_id, permissions_id
-
-user_profile
-Hồ sơ chi tiết của user.
-
-firstname, lastname, dob, city, avatar, user_id
-
-invalidated_token
-Danh sách token đã bị thu hồi.
-
-id, expirytime
-
-3.2. Chat Service
-
-conversation
-Quản lý một cuộc hội thoại.
-
-id, type, participants_hash, created_at, modified_date
-
-conversation_participant
-Ai tham gia hội thoại nào.
-
-id, conversation_id, user_id, role, joined_at
-
-chat_message
-Lưu tin nhắn.
-
-id, conversation_id, sender_id, message, created_date
-
-web_socket_session
-Quản lý session khi user kết nối WebSocket.
-
-id, socket_session_id, user_id, created_at
-
-3.3. File Service
-
-files
-Lưu thông tin file upload (ảnh, video).
-
-id, owner_id, content_type, size, md5_checksum, path
-
-3.4. Post Service
-
-posts
-Quản lý bài đăng bán xe.
-
-id, users_id, context, media_url, privacy, created_at, modified_date
-
-3.5. Profile Service
-
-(Sử dụng lại bảng user_profile trong Identity DB hoặc tách riêng nếu muốn độc lập.)
-
-Lưu thông tin chi tiết của user: ảnh đại diện, mô tả, thông tin cá nhân.
-
-Docker Hub link: https://hub.docker.com/repositories/tvpquyen
-
-**Lưu ý:**
-Trong application.yaml trong oto bankend và file configurations.js bên fontend tự động thêm dữ liệu google could để login google:
+```javascript
+export const OAuthConfig = {
   clientID: "",
-  redirect: "",
+  redirect: "http://localhost:3000/authenticate",
   authUri: ""
+};
+```
+
+---
+### ⚙️ Backend – Spring Boot Microservices
+
+Hệ thống backend tuân thủ mô hình microservice, mỗi service đảm nhận một vai trò độc lập.
+
+| Service                        | Mô tả                                                 | Port |
+| ------------------------------ | ----------------------------------------------------- | ---- |
+| **API Gateway**                | Cổng vào duy nhất, định tuyến request                 | 8080 |
+| **Oto Service (User Service)** | Quản lý người dùng, xác thực, Google Login, JWT       | 8081 |
+| **Category Service**           | Quản lý danh mục xe (hãng, loại, dòng xe)             | 8082 |
+| **Product Service**            | CRUD sản phẩm ô tô                                    | 8083 |
+| **Post Service**               | Quản lý bài đăng và nội dung chia sẻ                  | 8084 |
+| **Profile Service**            | Hồ sơ cá nhân (thông tin, avatar, mô tả)              | 8085 |
+| **Chat Service**               | Chat real-time (WebSocket) giữa người mua & bán       | 8086 |
+| **File Service**               | Upload, lưu metadata ảnh xe                           | 8087 |
+| **Search History Service**     | Ghi nhận, thống kê lịch sử tìm kiếm, từ khóa phổ biến | 8088 |
+| **Python Service**             | Xử lý tìm kiếm sản phẩm bằng hình ảnh (AI)            | 8000 |
+
+---
+
+### 🔐 OAuth2 Config trong `application.yml`
+
+```yaml
+outbound:
+  identity:
+    client-id: ${CLIENT_ID}
+    client-secret: ${CLIENT_SECRET}
+    redirect-uri: "http://localhost:3000/authenticate"
+```
+
+> `CLIENT_ID` và `CLIENT_SECRET` được truyền qua **biến môi trường** (Environment Variables).
+
+---
+
+## 🗃️ Database (MySQL)
+
+Mỗi service có database riêng biệt:
+
+* `oto_service` – người dùng, role, token, profile
+* `category_service` – danh mục xe
+* `product_service` – sản phẩm ô tô
+* `post_service` – bài đăng người dùng
+* `chat_service` – hội thoại & tin nhắn
+* `file_service` – metadata file
+* `search_history_service` – thống kê, lịch sử tìm kiếm
+
+---
+
+## 🐍 Python Service (Image Search)
+
+```bash
+uvicorn main:app --host 127.0.0.1 --port 8000
+```
+
+> Dịch vụ này giúp tìm kiếm sản phẩm ô tô bằng hình ảnh.
+
+---
+
+## 🐳 Docker & Redis / Elasticsearch
+
+### `docker-compose.yml` 
+
+```yaml
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=oto_service
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis
+    container_name: redis-server
+    ports:
+      - "6379:6379"
+
+  elasticsearch:
+    image: elasticsearch:8.14.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+
+```
+
+Chạy toàn hệ thống:
+
+```bash
+docker-compose up -d
+```
+---
+
+## 🧠 Công nghệ sử dụng
+Loại                |Công nghệ
+
+Frontend            |ReactJS,TailwindCSS,Redux Toolkit
+Backend             |Spring Boot, Spring Cloud, JPA, Spring Security, OAuth2, JWT
+Microservices       |API Gateway, Category, Chat, File, Oto(User), Post, Product, Profile, Search History
+Communication       |WebSocket
+Database            |MySQL
+Cache               |Redis
+Search Engine       |Elasticsearch
+AI Image Search     |Python (CLIP + DINOV2 + FAISS)
+Containerization    |Docker
+IDE                 |IntelliJ IDEA, Visual Studio Code
+Dev Tools           |Postman, MySQL Workbench, Xampp
+
+
+---
+
+## 📊 Thống kê & Báo cáo
+
+* Thống kê sản phẩm được tìm kiếm nhiều nhất theo **giờ / tháng / năm**
+* Người dùng có lượt tìm kiếm nhiều nhất
+* Phân tích hành vi tìm kiếm bằng **Elasticsearch Aggregations**
+
+---
+
+## 🧪 Chạy thử cục bộ
+
+```bash
+export CLIENT_ID=<google_client_id>
+export CLIENT_SECRET=<google_client_secret>
+npm install && npm start
+```
+
+---
+
+> 💡 *Dự án vẫn đang trong quá trình hoàn thiện — mục tiêu chính là kiểm thử hệ thống microservices, Redis, Elasticsearch, Google OAuth, và khả năng mở rộng toàn bộ hệ sinh thái.*

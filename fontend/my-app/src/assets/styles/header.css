@@ -1,0 +1,172 @@
+.Header {
+    position: fixed;
+    z-index : 1000;
+    width   : 100%;
+    top     : 0;
+}
+
+.Menu {
+    display         : flex;
+    align-items     : center;
+    justify-content : space-around;
+    font-family     : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size       : 16px;
+    background-color: rgb(31, 30, 30);
+    height          : 60px;
+    color           : #ccc;
+    position        : relative;
+}
+
+
+.Menu a {
+    text-decoration: none;
+    color          : #ccc;
+}
+
+.slect-menu>div {
+
+    margin: 0 15px;
+}
+
+.option_menu:hover {
+    background-color: rgb(47, 48, 48);
+}
+
+.slect-menu {
+    position   : relative;
+    color      : white;
+    height     : 100%;
+    display    : flex;
+    align-items: center;
+
+}
+
+.slect-menu ul {
+    padding: 10px 20px;
+    margin : 0;
+}
+
+.Menu .slect-menu .profile-img,
+i,
+.option_menu {
+    cursor: pointer;
+}
+
+.Menu .slect-menu .profile-img {
+    height          : 35px;
+    width           : 35px;
+    background-color: rgba(24, 0, 243, 0.445);
+    object-fit      : cover;
+    border-radius   : 100%;
+}
+
+.menu-profile {
+    position        : absolute;
+    z-index         : 9999;
+    background-color: black;
+    top             : 100%;
+    left            : 0;
+    display         : flex;
+    pointer-events  : none;
+    flex-direction  : column;
+    transform       : translateY(-10px);
+    transition      : all 0.3s ease;
+}
+
+
+
+.icon-notify {
+    position   : relative;
+    display    : flex;
+    align-items: center;
+    height     : 100%;
+
+}
+
+.icon_notify_container {
+    position: relative;
+}
+
+.icon-notify .icon_notify_containe_slect {
+    font-size       : 25px;
+    background-color: rgb(47, 48, 48);
+    border-radius   : 50%;
+    padding         : 4px;
+}
+
+.icon-notify i:hover {
+    background-color: rgb(78, 78, 78);
+}
+
+.icon-notify span {
+    position        : absolute;
+    top             : -10px;
+    right           : -10px;
+    background-color: rgb(223, 23, 23);
+    color           : white;
+    border-radius   : 50%;
+    padding         : 2px 6px;
+    font-size       : 12px;
+}
+
+.menu-profile.show,
+.MenuChildren.show,
+.chat.show {
+    opacity       : 1;
+    transform     : translateY(0);
+    pointer-events: all;
+
+}
+
+.menu-profile.hide,
+.MenuChildren.hide,
+.chat.hide {
+    opacity       : 0;
+    transform     : translateY(-10px);
+    pointer-events: none;
+}
+
+.menu-profile li {
+    list-style: none;
+    font-size : 18px;
+    padding   : 10px 0;
+
+}
+
+.Menu i {
+    font-size: 25px;
+}
+
+.Menu img {
+    height: 60px;
+    width : 60px;
+
+}
+
+.MenuChildren {
+    position        : absolute;
+    z-index         : 9999;
+    background-color: black;
+    top             : 100%;
+    left            : 0;
+    width           : 100%;
+    pointer-events  : none;
+    opacity         : 0;
+    transform       : translateY(-10px);
+    transition      : all 0.3s ease;
+}
+
+.chat {
+    position        : absolute;
+    background-color: rgb(49, 49, 49);
+    width           : 400px;
+    z-index         : 99999;
+    opacity         : 1;
+    transform       : translateY(-10px);
+    padding         : 20px;
+    border-radius   : 5px;
+    top             : 100%;
+    pointer-events  : none;
+    right           : 0;
+    transition      : all 0.3s ease;
+}
