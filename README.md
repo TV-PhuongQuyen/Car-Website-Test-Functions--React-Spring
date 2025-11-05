@@ -153,20 +153,19 @@ docker-compose up -d
 ```
 ---
 
-## 🧠 Công nghệ sử dụng
-Loại                |Công nghệ
-
-Frontend            |ReactJS,TailwindCSS,Redux Toolkit
-Backend             |Spring Boot, Spring Cloud, JPA, Spring Security, OAuth2, JWT
-Microservices       |API Gateway, Category, Chat, File, Oto(User), Post, Product, Profile, Search History
-Communication       |WebSocket
-Database            |MySQL
-Cache               |Redis
-Search Engine       |Elasticsearch
-AI Image Search     |Python (CLIP + DINOV2 + FAISS)
-Containerization    |Docker
-IDE                 |IntelliJ IDEA, Visual Studio Code
-Dev Tools           |Postman, MySQL Workbench, Xampp
+🧠 Công nghệ sử dụng
+Loại	Công nghệ
+Frontend	ReactJS, Redux Toolkit, TailwindCSS
+Backend	Spring Boot, Spring Cloud, JPA, Spring Security, OAuth2, JWT
+Microservices	API Gateway, Category, Chat, File, Oto(User), Post, Product, Profile, Search History
+Communication	OpenFeign, WebSocket
+Database	MySQL
+Cache	Redis
+Search Engine	Elasticsearch
+AI Image Search	Python (FastAPI + Uvicorn)
+Containerization	Docker, Docker Hub
+IDE	IntelliJ IDEA, Visual Studio Code
+Dev Tools	Postman, MySQL Workbench
 
 
 ---
